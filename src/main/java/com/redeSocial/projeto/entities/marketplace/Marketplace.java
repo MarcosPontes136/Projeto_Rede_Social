@@ -2,10 +2,7 @@ package com.redeSocial.projeto.entities.marketplace;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Iterator;
 import java.util.List;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import com.redeSocial.projeto.entities.comment.Comment;
 import com.redeSocial.projeto.entities.user.User;

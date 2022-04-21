@@ -33,7 +33,6 @@ public abstract class Events {
 	DateTimeFormatter formatterTime = DateTimeFormatter.ofPattern("HH:mm:ss");
 	String time = formatterData.format(now);
 	
-	
 	public abstract void addComment(Integer id, User user, String text);
 	public abstract void editComment(Integer id, String text);
 	public abstract void removeComment(Integer id);
