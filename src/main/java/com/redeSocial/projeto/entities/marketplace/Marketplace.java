@@ -57,17 +57,19 @@ public class Marketplace {
 			}
 		}
 		System.out.println("-------------------------------------------------------------------------");
-		System.out.println("{COMMENT DELETED}");
+		System.out.println("{COMENTARIO DELETADO}");
 		System.out.println();
 	}
 	
 	public void showComment() {
 		for (int i = 0; i < comments.size(); i++) {
-			System.out.println("Comment #" + comments.get(i).getId() + " by " + comments.get(i).getUser()
-					+ " on " + date + " at " + time);
+			System.out.println("Comentario #" + comments.get(i).getId() + " de " + comments.get(i).getUser()
+					+ " em " + date + " no " + time);
 			System.out.println(comments.get(i).getText());
 			System.out.println();
 		}
 	}
+	
+	
 
 }
