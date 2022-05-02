@@ -31,6 +31,35 @@ public class Post {
 	String time = formatterData.format(now);
 	
 	
+	public void addComment (Integer id, User user, String text) {   //criar
+		comments.add(new Comment(id, user, text));
+	}
 	
+	public void editComment (Integer id, String text) {          //editar
+		for(int i=0; i < comments.size(); i++){
+			if (comments.get(i).getId() == id) {
+				comments.get(i).setText(text);
+			}
+		}
+	}
 	
+	public void removeComment(Integer id) {                   //remover
+		for(int i=0; i < comments.size(); i++) {
+			if (comments.get(i).getId() == id) {
+				comments.remove(i);
+			}
+		}
+		System.out.println("-------------------------------------------------------------------------");
+		System.out.println("{COMENTARIO DELETADO}");
+		System.out.println();
+	}
+	
+	public void showComment() {
+		for (int i = 0; i < comments.size(); i++) {
+			System.out.println("Comentario #" + comments.get(i).getId() + " de " + comments.get(i).getUser()
+					+ " em " + date + " no " + time);
+			System.out.println("        " + comments.get(i).getText());
+			System.out.println();
+		}
+	}
 }
