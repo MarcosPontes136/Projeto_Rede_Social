@@ -30,7 +30,7 @@ public class User extends Comment {
 
 	private List<Marketplace> marketplace;
 	private List<Post> posts;
-	private List<Follow> follows;
+	private List<Follow> followers;
 	private List<DevEvents> dev;
 	private List<GameEvents> gameEvents;
 	
@@ -71,7 +71,7 @@ public class User extends Comment {
 	}
 	
 	public void addProduct(User user, Integer id, String product, Double price, String description) {
-		getMarketplace().add(new Marketplace());
+		getMarketplace().add(new Marketplace(user, id, product, price, description, null, now, formatterData, product, formatterTime, description));
 	}
 	
 	public void editProductName(Integer id, String product) {
@@ -123,5 +123,80 @@ public class User extends Comment {
 			System.out.println();
 		}
 	}
+	
+	public void showYouPosts() {
+		for (int i = 0; i < posts.size(); i++) {
+			System.out.println();
+			System.out.println("Postado # " + getPosts().get(i).getIdPost() + "por" + name + " em " + date + "ás" + time);
+			System.out.println("Preço: " + marketplace.get(i).getPrice());
+			System.out.println("            " + posts.get(i).getContent());
+			System.out.println();
+		}
+	}
+	
+	public void  addPost(User user, Integer idPost, String content) {
+		posts.add(new Post(user, idPost, content, null, now, formatterData, content, formatterData, content));
+	}
+	
+	public void editPost(Integer idPost, String content) {
+		for (int i = 0; i < posts.size(); i++) {
+			if (posts.get(i).getIdPost() == idPost) {
+				posts.get(i).setContent(content);
+			}
+		}
+	}
+	
+	public void removePost(Integer idPost) {
+		for (int i = 0; i < posts.size(); i++) {
+			if (posts.get(i).getIdPost() == idPost) {
+				posts.remove(i);
+			}
+		}
+		System.out.println("-------------------------------------------------------------------------");
+		System.out.println("{POST DELETADO}");
+		System.out.println();
+		
+	}
+	
+	// FRIENDS 
+	
+	public void showFollowers() {
+		for (int i = 0; i < followers.size(); i++) {
+			System.out.println();
+			System.out.println("#" + followers.get(i).getName() + ", Data de nascimento: " + followers.get(i).getBirthdate() + ", Status de relacionamento: " 
+			+ followers.get(i).getRelationship());
+		}
+	}
+	
+	public void showFriends() {
+		System.out.println("-------------------------------------------------------------------------");
+		System.out.println("                                                                {FRIENDS}");
+		for (int i = 0; i < followers.size(); i++) {
+			System.out.println(followers.get(i).getName() + " / ");
+		}
+		System.out.println();
+	}
+	
+	public void follow(String name, String birthdate, String Relationship) {
+		followers.add(new Follow(name, birthdate, Relationship));
+		System.out.println();
+	}
+	
+	public void unFollow(String nameFallower) {
+		for (int i = 0; i < followers.size(); i++) {
+			if (followers.get(i).getName().contentEquals(nameFallower)) {
+				followers.remove(i);
+				System.out.println("{FRIEND REMOVIDO!}");
+			}else {
+				System.out.println("{VOCÊ NÃO TEM UM AMMIGO COM ESSE NOME!}");
+			}
+		}
+	}
+	
+	
+	// DEV EVENTS
+	
+	
+	
 	
 }
