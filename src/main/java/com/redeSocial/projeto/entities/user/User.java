@@ -196,7 +196,33 @@ public class User extends Comment {
 	
 	// DEV EVENTS
 	
+	public void showDevEvents() {
+		System.out.println("-------------------------------------------------------------------------");
+		for (int i = 0; i < dev.size(); i++) {
+			System.out.println();
+			System.out.println("Evento Dev. # " + getDev().get(i).getEventId() + "por" + name + " em " + date + "criado em" + date + " ás " + time);
+			System.out.println("Nós apresentamos a você " + dev.get(i).getEventName() + "!");
+			System.out.println("Salvo na data " + dev.get(i).getEventDate() + " em " + dev.get(i).getEventeLocal());
+			System.out.println("Informação: " + dev.get(i).getEventDescription());
+			System.out.println();
+			dev.get(i).showComment();
+			System.out.println();
+		}
+	}
 	
+	public void showYourDevEvents() {
+		System.out.println("-------------------------------------------------------------------------");
+		for (int i = 0; i < dev.size(); i++) {
+			System.out.println();
+			System.out.println("Evento Dev. # " + getDev().get(i).getEventId() + "por" + name + " em " + date + "criado em" + date + " ás " + time);
+			System.out.println("Nós apresentamos a você " + dev.get(i).getEventName() + "!");
+			System.out.println("Salvo na data " + dev.get(i).getEventDate() + " em " + dev.get(i).getEventeLocal());
+			System.out.println("Informação: " + dev.get(i).getEventDescription());
+			System.out.println();
+		}
+	}
 	
-	
+	public void addDevEvent() {
+		
+	}
 }
