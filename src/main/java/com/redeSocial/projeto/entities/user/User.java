@@ -222,7 +222,11 @@ public class User extends Comment {
 		}
 	}
 	
-	public void addDevEvent() {
+	public void addDevEvent(User user, Integer eventId, String eventName, String eventDate, String eventLocal, String eventDescription) {
+		dev.add(new DevEvents(user, eventId, eventName, eventDate, eventLocal, eventDescription));
+	}
+	
+	public void editDevEventName(Integer eventId, String eventName) {
 		
 	}
 }
