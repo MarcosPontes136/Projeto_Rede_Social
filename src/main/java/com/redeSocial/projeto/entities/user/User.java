@@ -227,6 +227,47 @@ public class User extends Comment {
 	}
 	
 	public void editDevEventName(Integer eventId, String eventName) {
-		
+		for (int i = 0; i < dev.size(); i++) {
+			if (dev.get(i).getEventId() == eventId) {
+				dev.get(i).setEventName(eventName);
+			}
+		}
 	}
+	
+	public void editDevEventDate(Integer eventId, String eventDate) {
+		for (int i = 0; i < dev.size(); i++) {
+			if (dev.get(i).getEventId() == eventId) {
+				dev.get(i).setEventDate(eventDate);
+			}
+		}
+	}
+	
+	public void editDevEventLocal(Integer eventId, String eventLocal) {
+		for (int i = 0; i < dev.size(); i++) {
+			if (dev.get(i).getEventId() == eventId) {
+				dev.get(i).setEventeLocal(eventLocal);
+			}
+		}
+	}
+	
+	public void editDevEventDescription(Integer eventId, String eventDescription) {
+		for (int i = 0; i < dev.size(); i++) {
+			if (dev.get(i).getEventId() == eventId) {
+				dev.get(i).setEventDescription(eventDescription);
+			}
+		}
+	}
+	
+	public void editDevEventDescription(Integer eventId) {
+		for (int i = 0; i < dev.size(); i++) {
+			if (dev.get(i).getEventId() == eventId) {
+				dev.remove(i);
+			}
+		}
+		System.out.println("-------------------------------------------------------------------------");
+		System.out.println("{EVENTO DELETADO}");
+		System.out.println();
+	}
+	
+	//GAME EVENTS
 }
