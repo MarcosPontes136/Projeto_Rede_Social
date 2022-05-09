@@ -271,7 +271,7 @@ public class User extends Comment {
 	
 	//GAME EVENTS
 	
-	public void showGameEvent() {
+	public void showGameEvents() {
 		System.out.println("-------------------------------------------------------------------------");
 		for (int i = 0; i < gameEvents.size(); i++) {
 			System.out.println();
@@ -284,6 +284,21 @@ public class User extends Comment {
 			System.out.println();
 		}
 	}
+	
+	public void showYourGameEvents() {
+		System.out.println("-------------------------------------------------------------------------");
+		for (int i = 0; i < gameEvents.size(); i++) {
+			System.out.println();
+			System.out.println("Game Event #" + gameEvents.get(i).getEventId() + " " + gameEvents.get(i).getEventName() + " por " + 
+			                   name + " criado em " + date + " as " + time);
+			System.out.println("Data Salva em " + gameEvents.get(i).getEventDate() + " no " + gameEvents.get(i).getEventeLocal());
+			System.out.println("Jogo: " + gameEvents.get(i).getGameName());
+			System.out.println("Info: " + gameEvents.get(i).getEventDescription());
+			System.out.println();
+		}
+	}
+	
+	
 	
 	
 }
