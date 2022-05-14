@@ -3,10 +3,7 @@ package com.redeSocial.projeto.entities.user;
 import java.time.LocalDateTime;
 
 import java.time.format.DateTimeFormatter;
-import java.util.Iterator;
 import java.util.List;
-
-import org.yaml.snakeyaml.error.Mark;
 
 import com.redeSocial.projeto.entities.Follow.Follow;
 import com.redeSocial.projeto.entities.comment.Comment;
@@ -42,7 +39,6 @@ public class User extends Comment {
 	DateTimeFormatter formatterTime = DateTimeFormatter.ofPattern("HH:mm:ss");
 	String time = formatterData.format(now);
 	
-	
 	//MARKETPLACE
 	
 	public void showMarket() {
@@ -55,7 +51,7 @@ public class User extends Comment {
 			System.out.println();
 			System.out.println();
 			marketplace.get(i).showComment();
-			System.out.println();
+			System.out.println();			
 		}
 	}
 	

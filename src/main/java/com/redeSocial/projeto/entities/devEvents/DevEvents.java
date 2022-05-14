@@ -45,4 +45,8 @@ public class DevEvents extends Events {
 			System.out.println();
 		}
 	}
+
+	public DevEvents(User user, Integer eventId, String eventName, String eventDate, String eventLocal,
+			String eventDescription) {
+	}
 }
