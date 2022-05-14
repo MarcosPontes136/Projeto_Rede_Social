@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.redeSocial.projeto.entities.post.Post;
 import com.redeSocial.projeto.entities.user.User;
 
 public class Main {
