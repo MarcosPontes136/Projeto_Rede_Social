@@ -1,4 +1,4 @@
-package com.redeSocial.projeto.dataBase;
+package com.redeSocial.projeto.db;
 
 import java.util.List;
 
