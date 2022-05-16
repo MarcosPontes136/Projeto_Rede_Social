@@ -1,4 +1,4 @@
-package com.redeSocial.projeto.dataBase;
+package com.redeSocial.projeto.entities.User;
 
 import java.util.List;
 
@@ -18,24 +18,28 @@ import lombok.EqualsAndHashCode;
 @AllArgsConstructor
 @EqualsAndHashCode
 @Entity
-public class UserDAO {
+public class User{
 	
 	@Id
 	private String userName;
 	
 	private String email;
-	private String password;
 	private String name;
+	private String password;
 	private String birthdate;
 	private String relationship;
-
+	
 	@ManyToMany
 	private List<Marketplace> products;
 	
 	@ManyToMany
-	private List<Events> events;
+	private List<Post> posts;
 	
 	@ManyToMany
-	private List<Post> posts;
+	private List<Events> events;
+	
+	public User(){
+		
+	}
 	
 }
