@@ -4,15 +4,13 @@ import java.util.List;
 
 public interface InterfaceDAO<T> {
 	
-	public void add(T reference);
+	public void persiste(T t);
 
-	public void remove(T reference);
-	
-	public void update(T reference);
+	public void remove(T t);
 
-	public List<T> all();
+	public T get(Object pk);
 	
-	public int getLastId();
+	public List<T> getAll();
 	
 }
 
