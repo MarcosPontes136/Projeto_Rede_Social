@@ -1,4 +1,4 @@
-package com.redeSocial.projeto.entities.Post;
+package com.redeSocial.projeto.entities;
 
 import javax.persistence.Id;
 

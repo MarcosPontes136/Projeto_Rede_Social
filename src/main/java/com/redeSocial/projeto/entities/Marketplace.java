@@ -1,4 +1,4 @@
-package com.redeSocial.projeto.entities.Marketplace;
+package com.redeSocial.projeto.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
