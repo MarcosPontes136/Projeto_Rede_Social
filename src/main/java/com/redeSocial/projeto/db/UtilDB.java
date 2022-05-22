@@ -1,12 +1,19 @@
 package com.redeSocial.projeto.db;
 
-import java.util.Iterator;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import javafx.scene.control.Alert;
+
+import com.redeSocial.projeto.AlertUtil;
 import com.redeSocial.projeto.entities.User;
 
 public class UtilDB {
@@ -41,10 +48,41 @@ public class UtilDB {
 	}
 	
 	public static List<User> consumeAPI(List<String> users){
-		return null;
+		List<User> result = new ArrayList<User>();
+		for (int lineIndex = 0; lineIndex < users.size(); lineIndex++) {
+			String line = users.get(lineIndex);
+			if (line.contains("username")) {
+				
+			}
+		}
+		return result;
+	}
+	private static String processJSONLine(String line) {
+		String[] dividedLine = line.split(":");
+		String username = dividedLine[1];
+		username = username.replace(",", " ");
+		username = username.replace("\"", " ");
+		username = username.trim();
+		return username;
 	}
 	
 	private static List<String> consultAPI(){
-		return null;
+		List<String> result = new ArrayList<>();
+		try {
+			URL url = new URL("");
+			URLConnection uc = url.openConnection();
+			InputStreamReader input = new InputStreamReader(uc.getInputStream());
+			BufferedReader in = new BufferedReader(input);
+			String inputLine;
+			
+			while ((inputLine = in.readLine())!= null)
+				result.add(inputLine);
+			
+			in.close();
+		} catch (Exception e) {
+			Alert alert = AlertUtil.error("ERROR", "API ERROR", "API ERROR!", e);
+			alert.showAndWait();
+		}
+		return result;
 	}
 }
